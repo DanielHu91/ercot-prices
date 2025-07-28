@@ -38,4 +38,3 @@ print(f"Loaded {len(dataframes)} files.")
 
 print("Cleaning data...\n")
 df = clean_sheet(dataframes)
-df.to_csv('cleaned_data.csv', index=False)

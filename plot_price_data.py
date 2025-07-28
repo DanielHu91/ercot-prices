@@ -14,7 +14,7 @@ def plot_price_data(file_path='cleaned_data.csv'):
 
     plt.xlabel('Time')
     plt.ylabel('Settlement Price ($/MWh)')
-    plt.title('ERCOT 15-Minute Interval Prices (2010-2025)')
+    plt.title('ERCOT Hourly Average Interval Prices (2010-2025)')
     plt.legend(title = 'Zone', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.subplots_adjust(right=2)
     plt.grid(True)

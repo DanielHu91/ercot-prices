@@ -1,5 +1,6 @@
 import pandas as pd
 import glob
+from CPIAdjuster import adjust_prices_for_inflation
 
 def clean_sheet(file_paths):
     all_data = []
@@ -32,3 +33,9 @@ def clean_sheet(file_paths):
     hourly_avg.to_csv('hourly_avg_prices.csv', index=False)
     print("Hourly averages calculated and saved to 'hourly_avg_prices.csv'.")
     print(hourly_avg.head(10))
+
+    cpi_adjusted_df = adjust_prices_for_inflation(hourly_avg)
+    cpi_adjusted_df.to_csv('cpi_adjusted_prices.csv', index=False)
+    print("CPI adjusted prices saved to 'cpi_adjusted_prices.csv'.")
+    print(cpi_adjusted_df.head(10))
+    return cpi_adjusted_df
